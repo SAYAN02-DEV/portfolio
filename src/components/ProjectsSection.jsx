@@ -12,24 +12,14 @@ const projects = [
   },
   {
     id: 2,
-    title: "PassGuard: Password Manager",
+    title: "Doc.Ask",
     description:
-      "Password manager that helps you generate, store, and autofill strong passwords across your devices.",
+      "An AI Chat bot that answers your questions on the basis of the uploaded document.",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "MongoDB", "Next.js"],
+    tags: ["TypeScript", "MongoDB", "Node.js", "Python", "GenAI"],
     demoUrl: "#",
     githubUrl: "#",
-  },
-  {
-    id: 3,
-    title: "ChessMaster ",
-    description:
-      "ChessMaster is a real-time multiplayer chess app.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "SQL"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
+  }
 ];
 
 export const ProjectsSection = () => {
