@@ -3,11 +3,12 @@ import bitlogo from '../assets/bit.jpeg';
 import jnvlogo from '../assets/jnv.png';
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative bg-gradient-to-b from-secondary/10 to-background">
+    <section id="about" className="py-24 px-4 relative bg-gradient-to-b from-secondary/10 to-background section-divider">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          About <span className="text-primary">Me</span>
-        </h2>
+        <div className="flex justify-center mb-6">
+          <span className="section-eyebrow">About</span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center heading-gradient">Me</h2>
         
         <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
           Get to know more about my journey, skills, and passion for technology
@@ -48,7 +49,7 @@ export const AboutSection = () => {
           <div className="space-y-6">
             <h3 className="text-xl font-semibold mb-6 text-center lg:text-left">Education</h3>
             
-            <div className="gradient-border p-8 card-hover group">
+            <div className="gradient-border glass-card p-8 card-hover group">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
                   <img 
@@ -71,7 +72,7 @@ export const AboutSection = () => {
               </div>
             </div>
 
-            <div className="gradient-border p-8 card-hover group">
+            <div className="gradient-border glass-card p-8 card-hover group">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
                   <img 

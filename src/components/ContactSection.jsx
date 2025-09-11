@@ -30,11 +30,12 @@ export const ContactSection = () => {
     }, 1500);
   };
   return (
-    <section id="contact" className="py-24 px-4 relative bg-gradient-to-b from-secondary/20 to-background">
+    <section id="contact" className="py-24 px-4 relative bg-gradient-to-b from-secondary/20 to-background section-divider">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Contact <span className="text-primary">Me</span>
-        </h2>
+        <div className="flex justify-center mb-6">
+          <span className="section-eyebrow">Contact</span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center heading-gradient">Me</h2>
 
         <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
           Have a project in mind or want to collaborate? Feel free to reach out.
@@ -121,7 +122,7 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-card p-10 rounded-2xl shadow-lg border border-border/50">
+          <div className="glass-card p-10 rounded-2xl shadow-lg border border-border/50">
             <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
               Send a Message
             </h3>
@@ -182,7 +183,7 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-3 text-lg py-4",
+                  "btn-primary w-full flex items-center justify-center gap-3 text-lg py-4",
                   isSubmitting && "opacity-70 cursor-not-allowed"
                 )}
               >

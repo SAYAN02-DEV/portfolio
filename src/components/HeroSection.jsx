@@ -4,23 +4,26 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4 bg-gradient-to-br from-background via-background to-primary/5"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 bg-gradient-to-br from-background via-background to-primary/5 section-divider"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-subtle"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="grid-overlay"></div>
       </div>
 
-      <div className="container max-w-5xl mx-auto text-center z-10">
-        <div className="space-y-8">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in block mb-2"> Hi, I'm</span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent animate-glow">
-              Sayan
+      <div className="container max-w-6xl mx-auto text-center z-10">
+        <div className="space-y-10">
+          <div className="flex justify-center">
+            <span className="section-eyebrow opacity-0 animate-fade-in">Hi, I'm</span>
+          </div>
+          <h1 className="tracking-tight font-extrabold">
+            <span className="block text-5xl md:text-7xl lg:text-8xl heading-gradient opacity-0 animate-fade-in-delay-1">
+              Sayan Manna
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground opacity-0 animate-fade-in-delay-2 block mt-4">
-              Software Engineer & Problem Solver
+            <span className="block mt-4 text-xl md:text-2xl lg:text-3xl text-muted-foreground font-semibold opacity-0 animate-fade-in-delay-2">
+              Full Stack Developer | Devops Enthusiast
             </span>
           </h1>
 
@@ -28,14 +31,9 @@ export const HeroSection = () => {
             I'm an aspiring Software Engineer passionate about building scalable web applications. Skilled in the MERN stack and Data Structures & Algorithms, I enjoy solving real-world problems through clean and efficient code.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="cosmic-button group">
-              <span className="relative z-10">View My Work</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </a>
-            <a href="#contact" className="px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold">
-              Get In Touch
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2 opacity-0 animate-fade-in-delay-4">
+            <a href="#projects" className="btn-primary">View My Work</a>
+            <a href="#contact" className="btn-outline">Get In Touch</a>
           </div>
         </div>
       </div>

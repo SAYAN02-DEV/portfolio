@@ -24,11 +24,12 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 px-4 relative bg-gradient-to-b from-background to-secondary/10">
+    <section id="projects" className="py-24 px-4 relative bg-gradient-to-b from-background to-secondary/10 section-divider">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary">Projects</span>
-        </h2>
+        <div className="flex justify-center mb-6">
+          <span className="section-eyebrow">Featured</span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center heading-gradient">Projects</h2>
 
         <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
           Here are some of my recent projects. Each project was carefully
@@ -39,7 +40,7 @@ export const ProjectsSection = () => {
           {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:border-primary/30"
+              className="group glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:border-primary/30"
             >
               <div className="h-64 overflow-hidden relative">
                 <img

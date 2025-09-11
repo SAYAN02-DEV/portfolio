@@ -47,11 +47,12 @@ const SkillsSection = () => {
   const categories = ["frontend", "backend", "tools"];
 
   return (
-    <section id="skills" className="py-24 px-4 relative bg-gradient-to-b from-background to-secondary/20">
+    <section id="skills" className="py-24 px-4 relative bg-gradient-to-b from-background to-secondary/20 section-divider">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          My <span className="text-primary">Skills</span>
-        </h2>
+        <div className="flex justify-center mb-6">
+          <span className="section-eyebrow">My</span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center heading-gradient">Skills</h2>
         
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Technologies and tools I use to bring ideas to life
@@ -79,7 +80,7 @@ const SkillsSection = () => {
           {filteredSkills.map((skill, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center p-6 rounded-xl bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-2"
+              className="group flex flex-col items-center p-6 rounded-xl glass-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-2"
               title={skill.name}
             >
               <div className="text-5xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300">

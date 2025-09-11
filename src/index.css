@@ -170,6 +170,65 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+@utility section-divider {
+  @apply relative;
+}
+
+@layer utilities {
+  .section-divider::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: min(88%, 1100px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    opacity: .6;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(hsl(var(--border)) 1px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.4), rgba(0,0,0,0) 60%);
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.4), rgba(0,0,0,0) 60%);
+  }
+
+  .glass-card {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--card) / 0.6),
+      hsl(var(--card) / 0.4)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-7 py-3 rounded-full font-semibold text-primary-foreground bg-gradient-to-r from-primary to-purple-600 transition-all duration-300 shadow-md hover:shadow-[0_8px_24px_rgba(139,92,246,0.35)] hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-7 py-3 rounded-full font-semibold border-2 border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold bg-primary/10 text-primary border border-primary/20;
+  }
+
+  .heading-gradient {
+    background: linear-gradient(90deg, hsl(var(--foreground)), hsl(var(--primary)) 60%, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
 @utility cosmic-button {
   @apply px-8 py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground font-semibold 
          transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)]
