@@ -18,6 +18,9 @@
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-scale-in: scale-in 0.5s ease-out forwards;
 
   @keyframes float {
     0%,
@@ -60,6 +63,34 @@
       opacity: 0;
     }
   }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    }
+    to {
+      text-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.3);
+    }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
 @layer base {
@@ -76,15 +107,15 @@
   }
 
   .dark {
-    --background: 222 47% 4%;
+    --background: 222 47% 2%;
     --foreground: 213 31% 91%;
 
-    --card: 222 47% 8%;
+    --card: 222 47% 6%;
 
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
 
-    --border: 217 33% 20%;
+    --border: 217 33% 15%;
   }
 
   * {
@@ -132,16 +163,17 @@
 }
 
 @utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  @apply relative rounded-xl;
+  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--card)));
   background-clip: padding-box;
   border: 1px solid transparent;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 @utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
-         hover:scale-105 active:scale-95;
+  @apply px-8 py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground font-semibold 
+         transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)]
+         hover:scale-105 active:scale-95 relative overflow-hidden;
 }
 
 @utility star {

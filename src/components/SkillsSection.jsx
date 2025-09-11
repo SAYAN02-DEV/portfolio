@@ -47,40 +47,50 @@ const SkillsSection = () => {
   const categories = ["frontend", "backend", "tools"];
 
   return (
-    <section className="py-10 px-4 md:px-12">
-      <h2 className="text-3xl font-bold mb-6 text-center">My Skills</h2>
+    <section id="skills" className="py-24 px-4 relative bg-gradient-to-b from-background to-secondary/20">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          My <span className="text-primary">Skills</span>
+        </h2>
+        
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Technologies and tools I use to bring ideas to life
+        </p>
 
-      {/* Category Buttons */}
-      <div className="flex justify-center gap-4 mb-8">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-              selectedCategory === category
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-            }`}
-          >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </button>
-        ))}
-      </div>
+        {/* Category Buttons */}
+        <div className="flex justify-center gap-2 mb-12 flex-wrap">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                selectedCategory === category
+                  ? "bg-primary text-primary-foreground shadow-lg scale-105"
+                  : "bg-card text-foreground hover:bg-primary/10 hover:scale-105 border border-border"
+              }`}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
+        </div>
 
-      {/* Skill Icons */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 justify-items-center">
-        {filteredSkills.map((skill, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center p-4 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:scale-105 transition-transform"
-            title={skill.name}
-          >
-            <div className="text-4xl text-blue-600 mb-2">{skill.icon}</div>
-            <span className="text-sm font-medium text-center">
-              {skill.name}
-            </span>
-          </div>
-        ))}
+        {/* Skill Icons */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {filteredSkills.map((skill, index) => (
+            <div
+              key={index}
+              className="group flex flex-col items-center p-6 rounded-xl bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-2"
+              title={skill.name}
+            >
+              <div className="text-5xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
+                {skill.icon}
+              </div>
+              <span className="text-sm font-semibold text-center text-foreground group-hover:text-primary transition-colors">
+                {skill.name}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
